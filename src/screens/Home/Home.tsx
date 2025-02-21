@@ -1,14 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Dimensions, Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import {Dimensions, Text, View, TouchableOpacity, StyleSheet, Image, Modal } from 'react-native';
 
 import { getPopularMovies} from '../../utils/service/TMDBService';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel , { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel';
 
 const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const Home = () => {
     const [topImages, setTopImages] = useState<any>([]);
+    const [showDetailModal, setShowDetailModal] = useState(false);
     const ref = useRef<ICarouselInstance>(null);
     const progress = useSharedValue<number>(0);
 
@@ -28,6 +30,14 @@ const Home = () => {
             count: index - progress.value,
             animated: true,
         });
+    };
+
+    const openDetialModal = () => {
+        setShowDetailModal(true);
+    };
+
+    const closeDetailModal = () => {
+        setShowDetailModal(false);
     };
 
     return (
@@ -67,7 +77,10 @@ const Home = () => {
                       <TouchableOpacity style={styles.buttonWishList}>
                           <Text style={styles.textWishList}>+ WishList</Text>
                       </TouchableOpacity>
-                      <TouchableOpacity style={styles.buttonDetail}>
+                      <TouchableOpacity
+                          onPress={openDetialModal}
+                          style={styles.buttonDetail}
+                      >
                           <Text style={styles.textDetails}>Details</Text>
                       </TouchableOpacity>
                   </View>
@@ -80,6 +93,24 @@ const Home = () => {
               containerStyle={{ gap: 5, marginTop: 20 }}
               onPress={onPressPagination}
           />
+          <Modal
+              visible={showDetailModal}
+              transparent={true}
+              animationType="fade"
+              onRequestClose={closeDetailModal}
+          >
+              <View style={styles.modalOverlay}>
+                  <View style={styles.modalContent}>
+                      <Text>Aquí van los detalles...</Text>
+                      <TouchableOpacity
+                          style={styles.closeButton}
+                          onPress={closeDetailModal}
+                      >
+                          <Text>Cerrar</Text>
+                      </TouchableOpacity>
+                  </View>
+              </View>
+          </Modal>
       </View>
     );
 };
@@ -143,6 +174,27 @@ const styles = StyleSheet.create({
     textDetails: {
         fontWeight: 'bold',
         fontSize: 18,
+    },
+    modalOverlay: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    modalContent: {
+        width: '100%',
+        height: height / 1.4,
+        backgroundColor: 'white',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        padding: 20,
+        alignItems: 'center',
+    },
+    closeButton: {
+        marginTop: 20,
+        backgroundColor: '#F2C94C',
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 5,
     },
 });
 
