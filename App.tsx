@@ -1,8 +1,5 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   useColorScheme,
   View,
 } from 'react-native';
@@ -20,15 +17,11 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+    <View style={backgroundStyle}>
         <View>
             <Home />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
