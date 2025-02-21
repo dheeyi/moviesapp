@@ -9,7 +9,6 @@ import {
 
 import {
   Colors,
-  Header,
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './src/screens/Home/Home.tsx';
 
@@ -22,14 +21,9 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+      <StatusBar backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View>
             <Home />
         </View>
