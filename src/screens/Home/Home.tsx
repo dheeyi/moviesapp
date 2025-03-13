@@ -5,7 +5,8 @@ import { getPopularMovies} from '../../utils/service/TMDBService';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel , { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel';
 import ModalDetail from '../../components/Modals/modalDetail.tsx';
-import SubHeader from "../../components/core/SubHeader.tsx";
+import SubHeader from '../../components/core/SubHeader.tsx';
+import ListMovies from '../../components/core/ListMovies.tsx';
 
 const width = Dimensions.get('window').width;
 
@@ -107,11 +108,7 @@ const Home = () => {
               titleNav="see more"
               handleNav={redirectSeeMore}
           />
-          <SubHeader
-              title="Best Movies"
-              titleNav="see more"
-              handleNav={redirectSeeMore}
-          />
+          <ListMovies />
       </View>
     );
 };
