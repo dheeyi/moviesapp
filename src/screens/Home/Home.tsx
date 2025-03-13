@@ -5,6 +5,7 @@ import { getPopularMovies} from '../../utils/service/TMDBService';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel , { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel';
 import ModalDetail from '../../components/Modals/modalDetail.tsx';
+import SubHeader from "../../components/core/SubHeader.tsx";
 
 const width = Dimensions.get('window').width;
 
@@ -38,6 +39,10 @@ const Home = () => {
 
     const closeDetailModal = () => {
         setShowDetailModal(false);
+    };
+
+    const redirectSeeMore = () => {
+        console.log('Redirecting to see more');
     };
 
     return (
@@ -97,6 +102,16 @@ const Home = () => {
                showDetailModal={showDetailModal}
                closeDetailModal={closeDetailModal}
            />
+          <SubHeader
+              title="Marvel Studios"
+              titleNav="see more"
+              handleNav={redirectSeeMore}
+          />
+          <SubHeader
+              title="Best Movies"
+              titleNav="see more"
+              handleNav={redirectSeeMore}
+          />
       </View>
     );
 };
