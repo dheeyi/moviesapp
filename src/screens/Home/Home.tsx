@@ -8,6 +8,7 @@ import ModalDetail from '../../components/Modals/modalDetail.tsx';
 import SubHeader from '../../components/core/SubHeader.tsx';
 import ListMovies from '../../components/core/ListMovies.tsx';
 import { getRatedMovies, getUpComingMovies } from '../../utils/service/TMDBService';
+import useTMDB from "../../hooks/useTMDB";
 
 const width = Dimensions.get('window').width;
 
@@ -16,17 +17,16 @@ const Home = () => {
     const [showDetailModal, setShowDetailModal] = useState(false);
     const ref = useRef<ICarouselInstance>(null);
     const progress = useSharedValue<number>(0);
+    const [data] = useTMDB('movie/popular');
 
     useEffect(() => {
-        getPopularMovies()
-            .then((response: any) => {
-                const movies = response.map((item: any) => ({
-                    posterPath: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-                }));
-                setTopImages(movies);
-                console.log(movies);
-            });
-    }, []);
+        if (data && data.length) {
+            const movies = data.map((item: any) => ({
+                posterPath: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
+            }));
+            setTopImages(movies);
+        }
+    }, [data]);
 
     const onPressPagination = (index: number) => {
         ref.current?.scrollTo({
