@@ -18,10 +18,11 @@ const SubHeader = ({ title, titleNav, handleNav } : any) => {
 
 const styles = StyleSheet.create({
     subHeaderContainer: {
-        paddingHorizontal: 18,
+        paddingHorizontal: 15,
         paddingTop: 10,
         marginTop: 10,
         backgroundColor: '#000000',
+        paddingBottom: 12,
     },
     subHeaderTitleContainer: {
         flexDirection: 'row',
@@ -29,12 +30,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     titleStyles: {
-        fontSize: 20,
+        fontSize: 23,
         fontWeight: 'bold',
         color: '#FFFFFF',
     },
     titleNavStyles: {
-        fontSize: 17,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#F2C94C',
     },

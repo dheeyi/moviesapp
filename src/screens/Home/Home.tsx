@@ -53,7 +53,7 @@ const Home = () => {
                   ref={ref}
                   width={width}
                   height={width * 1.5}
-                  data={topImages}
+                  data={topImages.slice(0, 6)}
                   autoPlay={true}
                   autoPlayInterval={5000}
                   onProgressChange={progress}
@@ -94,9 +94,10 @@ const Home = () => {
           </View>
           <Pagination.Basic
               progress={progress}
-              data={topImages}
-              dotStyle={{ backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: 50 }}
-              containerStyle={{ gap: 5, marginTop: 20 }}
+              data={topImages.slice(0, 6)}
+              dotStyle={{ backgroundColor: '#FFFFFF', borderRadius: 50 }}
+              activeDotStyle={{ backgroundColor: '#F2C94C' }}
+              containerStyle={{ gap: 8, marginTop: 25 }}
               onPress={onPressPagination}
           />
            <ModalDetail
@@ -104,7 +105,7 @@ const Home = () => {
                closeDetailModal={closeDetailModal}
            />
           <SubHeader
-              title="Marvel Studios"
+              title="Rated Movies"
               titleNav="see more"
               handleNav={redirectSeeMore}
           />

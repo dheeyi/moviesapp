@@ -24,18 +24,17 @@ const ListMovies = () => {
     <View>
             <Carousel
                 data={ratedImages}
-                height={258}
-                loop={true}
+                height={200}
                 pagingEnabled={false}
                 snapEnabled={false}
                 width={width}
                 style={{
-                    width:width,
+                    width: width,
                 }}
                 mode="parallax"
                 modeConfig={{
-                    parallaxScrollingScale: 0.9,
-                    parallaxScrollingOffset: 50,
+                    parallaxScrollingScale: 1,
+                    parallaxScrollingOffset: 220,
                 }}
                 onProgressChange={progress}
                 renderItem={({ item }: any) => (
@@ -43,6 +42,7 @@ const ListMovies = () => {
                         style={{
                             flex: 1,
                             justifyContent: 'center',
+                            width: '40%',
                         }}
                     >
                         <Image
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     imagePoster: {
         width: '100%',
         height: '100%',
+        borderRadius: 15,
     },
 });
 
