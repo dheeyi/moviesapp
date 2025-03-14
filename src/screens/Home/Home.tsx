@@ -9,6 +9,7 @@ import SubHeader from '../../components/core/SubHeader.tsx';
 import ListMovies from '../../components/core/ListMovies.tsx';
 import { getRatedMovies, getUpComingMovies } from '../../utils/service/TMDBService';
 import useTMDB from "../../hooks/useTMDB";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get('window').width;
 
@@ -18,6 +19,7 @@ const Home = () => {
     const ref = useRef<ICarouselInstance>(null);
     const progress = useSharedValue<number>(0);
     const [data] = useTMDB('movie/popular');
+    const navigation = useNavigation<any>();
 
     useEffect(() => {
         if (data && data.length) {
@@ -45,6 +47,7 @@ const Home = () => {
 
     const redirectSeeMore = () => {
         console.log('Redirecting to see more');
+        navigation.navigate('SeeMore');
     };
 
     return (
