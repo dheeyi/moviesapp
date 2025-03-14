@@ -35,6 +35,16 @@ function App(): React.JSX.Element {
                   tabBarInactiveTintColor: '#FFFFFF',
                   tabBarActiveBackgroundColor: '#000000',
                   tabBarInactiveBackgroundColor: '#000000',
+                  tabBarStyle: {
+                      position: 'absolute',
+                      paddingTop: 8,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      elevation: 0,
+                      borderTopWidth: 0,
+                      backgroundColor: '#000000',
+                  },
               })}
           >
               <Tab.Screen
