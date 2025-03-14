@@ -8,7 +8,7 @@ import Home from './src/screens/Home/Home.tsx';
 import Search from './src/screens/Search.tsx';
 import WishList from './src/screens/WishList.tsx';
 import Profile from './src/screens/Profile.tsx';
-import SeeMore from './src/screens/SeeMore.tsx';
+import SeeMore from './src/components/core/SeeMore.tsx';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
