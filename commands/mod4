@@ -1,0 +1,38 @@
+******************************************
+Base Code:
+https://github.com/dheeyi/moviesapp/commit/4126d5a8f7b13d5a84aa4a62425af20381371f72
+https://github.com/dheeyi/moviesapp/commit/cfbf18553ba5a9b98c9d679975bb7c5ea1199976
+https://github.com/dheeyi/moviesapp/commit/c61fe1319a6c7383f44b606c216f846cbf65b4fb
+https://github.com/dheeyi/moviesapp/commit/00c6153283fb7cec9af79f101f8cb89b179fdb56
+https://github.com/dheeyi/moviesapp/commit/199fbe13f76f6718a9df042444953c5faf2c54fc
+https://github.com/dheeyi/moviesapp/commit/291e6ab3e871d2ad14f5e6de44e5b88c2d7d4742
+
+******************************************
+1 - Stack Navigation
+
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+npx pod-install ios
+
+npm install @react-navigation/stack
+npm install @react-navigation/native-stack
+npm install react-native-gesture-handler
+npx pod-install ios
+
+******************************************
+2 - Tab Navigator
+
+npm install @react-navigation/bottom-tabs
+npm install --save @react-native-vector-icons/common
+npm install --save @react-native-vector-icons/fontawesome5
+
+npx pod-install ios
+
+npx rnvi-update-plist package.json ios/moviesapp/Info.plist
+
+******************************************
+3 - Drawer Navigator
+npm install @react-navigation/drawer
+
+npm install react-native-gesture-handler react-native-reanimated
+
