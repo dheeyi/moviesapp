@@ -1,0 +1,14 @@
+*****************************************
+Base Code:
+https://github.com/dheeyi/moviesapp/commit/fa17a851a9c46476e0408e983c0569e0085c3def
+https://github.com/dheeyi/moviesapp/commit/6c56b3e77eb62eafbf8b4490243c8cadcac030c2
+https://github.com/dheeyi/moviesapp/commit/25a7b8f4591708c4d5f67144c81b300b45dc329a
+https://github.com/dheeyi/moviesapp/commit/ad4c120462c9cbf586d529ac4bbc2d72b8d9c033
+https://github.com/dheeyi/moviesapp/commit/4a4f91317affdd1563cd1c5e1fb764d3b77e3144
+
+*****************************************
+
+1 - Hooks & Custom Hooks for “Movies APP”
+
+src/components/core/SubHeader.tsx
+src/components/core/SubHeader.tsx
