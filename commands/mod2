@@ -1,0 +1,59 @@
+************************************************
+Base Code:
+
+https://github.com/dheeyi/moviesapp/commit/01e8649b523bf63eb295febf79de1e595e1a7ed9
+https://github.com/dheeyi/moviesapp/commit/f6dc6f0294c4a22b220d6a2b19ec3b22d9648433
+https://github.com/dheeyi/moviesapp/commit/9cd03d8ba3fb95b4dfb80cd3fa5606c1c43dcb8c
+https://github.com/dheeyi/moviesapp/commit/74d3bc53a05773755aca2fdfc933735ed822db2a
+https://github.com/dheeyi/moviesapp/commit/1e8c6388274553b7d2cb485c4004666137131a44
+
+***********************************************
+1 - Components for “Movies APP”
+
+git status
+git add .
+git commit -m “init project”
+git push origin main
+
+npm install axios
+
+npm install react-native-dotenv
+editar: ‎babel.config.js 
+
+plugins: [
+    [
+      'module:react-native-dotenv',
+      {
+        moduleName: '@env',
+        path: '.env',
+      },
+    ],
+  ],
+
+2 - Button/Pressable & Text Input Component
+
+npm install react-native-reanimated react-native-gesture-handler
+
+npm i react-native-reanimated-carousel
+
+"clean": "react-native start -- --reset-cache",
+
+npm run clean
+npm run ios
+
+
+3 - ScrollView & Image Component
+
+width={width}
+height={width * 1.5}
+data={topImages}
+onProgressChange={progress}
+autoPlay={true}
+autoPlayInterval={5000}
+
+4 - FlatList & SectionList Component
+
+- autoPlay={true}
+- autoPlayInterval={5000}
+
+
