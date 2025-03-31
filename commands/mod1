@@ -1,3 +1,6 @@
+***********************************************************
+3 - Xcode y Android Studio: instalación y configuración
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install nvm
@@ -29,8 +32,20 @@ brew info --cask zulu@17
 
 edit /.zsh or ~/.bash_profile
 
-
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+***********************************************************
+4 - Creando una App con React Native CLI
+
+npx @react-native-community/cli@latest init moviesApp
+
+***********************************************************
+5 - Web Storm/Visual Studio, corriendo
+
+npx react-native start
+npx react-native run-ios
+npx react-native run-android
+
 
