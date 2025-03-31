@@ -1,0 +1,70 @@
+*****************************************************
+1 - Deployment (Google Play & App Store)
+
+brew install fastlane
+bundle install
+
+****************************************************
+2 - Publicación en Play Store (Android)
+
+applicationId "com.goowia.moviesapp"
+
+release {
+            storeFile file("moviesapp-release-key.keystore")
+            storePassword "TU_PASSWORD"
+            keyAlias "my-key-alias"
+            keyPassword "TU_PASSWORD"
+        }
+
+
+signingConfig signingConfigs.release
+
+./gradlew bundleRelease
+
+fastlane run validate_play_store_json_key json_key:./fastlane/fastlane-movies-app-da43813e63b9.json
+
+fastlane init
+
+fastlane deploy
+
+***************************************************************
+3 - Creando el .IPA file  - Build Movies App for release (iOS)
+
+com.goowia.moviesapp
+
+fastlane init
+
+fastlane match
+
+fastlane match appstore
+
+***************************************************************
+4 - Publicación en App Store (iOS)
+
+build_app(
+ workspace: "moviesapp.xcworkspace",
+ scheme: "moviesapp",
+ export_method: "app-store",
+ export_options: {
+   provisioningProfiles: {
+     "com.goowia.moviesapp2" => "match AppStore com.goowia.moviesapp2"
+   }
+ }
+)
+
+
+upload_to_app_store(
+ skip_metadata: true,
+ skip_screenshots: true,
+ run_precheck_before_submit: false,
+ api_key: {
+   key_id: "58VAQ8GCVQ",
+   issuer_id: "5551f8fb-6cf5-4423-b93f-2471a4d3959a",
+   key: File.read("AuthKey_58VAQ8GCVQ.p8")
+ }
+)
+
+https://www.appicon.co/ 
+
+fastlane release
+
