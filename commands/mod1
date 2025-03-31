@@ -1,0 +1,36 @@
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install nvm
+nvm install 22
+nvm use 22
+nvm --version
+node -v
+
+brew install watchman
+watchman --version
+
+brew install rbenv
+rbenv install -l
+rbenv install 3.4.1
+rbenv global 3.4.1
+rbenv init
+export PATH="$HOME/.rbenv/shims:$PATH"
+rbenv version
+ruby --version
+
+sudo gem uninstall cocoapods
+sudo gem install cocoapods
+
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license
+
+brew install --cask zulu@17
+brew info --cask zulu@17
+
+edit /.zsh or ~/.bash_profile
+
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
